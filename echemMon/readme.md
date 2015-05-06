@@ -7,7 +7,7 @@ written by Ken McGary (ken@circuitsci.com), Elliott Dicus and Peter Sand (manyla
 For more information see circuitsci.com
 
 echemMon_v0_0  3/19/2015 Initial Release.
-echemMon_v0_1  5/3/2015  Add many new features, see circuitsci.com/wiki/ for more info.
+echemMon_v0_1  5/3/2015  Add many new features
 
 Compiling and uploading this Arduino sketch requires downloading and installing two other libraries:
 https://github.com/JonHub/Filters enables the real-time filtering and statistics features of this software
