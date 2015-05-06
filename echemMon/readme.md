@@ -1,6 +1,11 @@
 Monitor code for echem328 toxic gas sensor board.
+
 Released under Creative Commons SA-BY 4.0 license
+
 written by Ken McGary (ken@circuitsci.com), Elliott Dicus and Peter Sand (manylabs.org)
+
+For more information see circuitsci.com
+
 echemMon_v0_0  3/19/2015 Initial Release.
 echemMon_v0_1  5/3/2015  Add many new features, see circuitsci.com/wiki/ for more info.
 
