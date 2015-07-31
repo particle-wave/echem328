@@ -379,25 +379,32 @@ void printSensors( const AQSensorValues &sensorValues ) {
 // print raw a/d and processed values to serial port
   if (g_settings.data_fields [ 0 ] > 0) {
     Serial.print(loopCount);// 
-  }  
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 1 ] > 0) {
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sampleTime);
-  }  
+     Serial.print(sampleTime);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 2 ] > 0) {
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sensorValues.echemVin, g_settings.data_fields [ 2 ]);
-  }  
+     Serial.print(sensorValues.echemVin, g_settings.data_fields [ 2 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 3 ] > 0) {
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sensorValues.echemVdd, g_settings.data_fields [ 3 ]);
-  }  
+     Serial.print(sensorValues.echemVdd, g_settings.data_fields [ 3 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 4 ] > 0) { // aux raw a/d signal
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sensorValues.volt1diff, g_settings.data_fields [ 4 ]); 
-  }  
+    Serial.print(sensorValues.volt1diff, g_settings.data_fields [ 4 ]); 
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 5 ] > 0) { // main Working Electrode raw a/d signal
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sensorValues.volt2diff, g_settings.data_fields [ 5 ]); 
-  }  
+     Serial.print(sensorValues.volt2diff, g_settings.data_fields [ 5 ]); 
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 6 ] > 0) { // AFE internal reference (half of board ref or 1.024V)
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sensorValues.volt3, g_settings.data_fields [ 6 ]); 
-  }  
+     Serial.print(sensorValues.volt3, g_settings.data_fields [ 6 ]); 
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 7 ] > 0) {
  /*   if ( g_settings.gasTemp < 50 ) {
       printTemp = gasTemp;
@@ -406,57 +413,73 @@ void printSensors( const AQSensorValues &sensorValues ) {
       printTemp = sensorValues.tempDelta;
     }
 */
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sensorValues.tempC, g_settings.data_fields [ 7 ]); 
+     Serial.print(sensorValues.tempC, g_settings.data_fields [ 7 ]); 
     // tempDelta is holdover from AQ Station code, is actually xtemp here 
     // or echem xtemp sensor value as read from a/d channel 0 
-  }                                                              
+  }
+  Serial.print ( PGMSTR(comma_space) );                                                              
   if (g_settings.data_fields [ 8 ] > 0) {
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sensorValues.ppmraw, g_settings.data_fields [ 8 ]);
-  }  
+     Serial.print(sensorValues.ppmraw, g_settings.data_fields [ 8 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 9 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(sensorValues.ppm, g_settings.data_fields [ 9 ]);
-  }  
+     Serial.print(sensorValues.ppm, g_settings.data_fields [ 9 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 10 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(filteredPPM, g_settings.data_fields [ 10 ]);
-  }  
+     Serial.print(filteredPPM, g_settings.data_fields [ 10 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 11 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(ppmFilterStats.mean(), g_settings.data_fields [ 11 ]);
-  }  
+     Serial.print(ppmFilterStats.mean(), g_settings.data_fields [ 11 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 12 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(ppmFilterStats.variance(), g_settings.data_fields [ 12 ]);
-  }  
+     Serial.print(ppmFilterStats.variance(), g_settings.data_fields [ 12 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 13 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(ppmFilterStats.sigma(), g_settings.data_fields [ 13 ]);
-  }  
+     Serial.print(ppmFilterStats.sigma(), g_settings.data_fields [ 13 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 14 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(filteredAUX, g_settings.data_fields [ 14 ]);
-  }  
+     Serial.print(filteredAUX, g_settings.data_fields [ 14 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 15 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(auxFilterStats.mean(), g_settings.data_fields [ 15 ]);
-  }  
+     Serial.print(auxFilterStats.mean(), g_settings.data_fields [ 15 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 16 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(auxFilterStats.variance(), g_settings.data_fields [ 16 ]);
-  }  
+     Serial.print(auxFilterStats.variance(), g_settings.data_fields [ 16 ]);
+  } 
+  Serial.print ( PGMSTR(comma_space) ); 
   if (g_settings.data_fields [ 17 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(auxFilterStats.sigma(), g_settings.data_fields [ 17 ]);
-  }  
+     Serial.print(auxFilterStats.sigma(), g_settings.data_fields [ 17 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 18 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(filteredRAW, g_settings.data_fields [ 18 ]);
-  }  
+     Serial.print(filteredRAW, g_settings.data_fields [ 18 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 19 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print(g_settings.gasTemp, g_settings.data_fields [ 19 ]);
-  }  
+     Serial.print(g_settings.gasTemp, g_settings.data_fields [ 19 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 20 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print((((float)analogRead(0) / 1024.0) * 2.048), g_settings.data_fields [ 20 ]);
-  }  
+     Serial.print((((float)analogRead(0) / 1024.0) * 2.048), g_settings.data_fields [ 20 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 21 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print((((float)analogRead(1) / 1024.0) * 2.048), g_settings.data_fields [ 21 ]);
-  }  
+     Serial.print((((float)analogRead(1) / 1024.0) * 2.048), g_settings.data_fields [ 21 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 22 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print((((float)analogRead(2) / 1024.0) * 2.048), g_settings.data_fields [ 22 ]);
-  }  
+     Serial.print((((float)analogRead(2) / 1024.0) * 2.048), g_settings.data_fields [ 22 ]);
+  }
+  Serial.print ( PGMSTR(comma_space) );  
   if (g_settings.data_fields [ 23 ] > 0) { 
-    Serial.print ( PGMSTR(comma_space) ); Serial.print((((float)analogRead(3) / 1024.0) * 2.048), g_settings.data_fields [ 23 ]);
+     Serial.print((((float)analogRead(3) / 1024.0) * 2.048), g_settings.data_fields [ 23 ]);
   }  
 //Serial.print ( PGMSTR(comma_space) ); Serial.print ( ppmComp,4 );
 //Serial.print ( PGMSTR(comma_space) ); Serial.print ( auxppm,4 );
